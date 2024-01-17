@@ -22,8 +22,14 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    environment: develop
     needs: lint
     steps:
+    
+      - name: se desplegará servicio develop
+        id: outputs
+        run: |
+           echo "secret ${{ secrets.USER }} var ${{ vars.name }}"
       - name: Check out code
         uses: actions/checkout@v2
       - name: Set up Python
@@ -47,12 +53,12 @@ jobs:
 
   publish:
      runs-on: ubuntu-latest
-     environment: develop
+     environment: laboratory
      needs: build
      env:
        Suser: ${{ secrets.USER }}
      steps:
-       - name: se desplegará servicio ${{ env.SERVICE }} en ${{ env.PARENT_PARTITION }}
+       - name: se desplegará servicio lab
          id: outputs
          run: |
                echo "secret ${{ secrets.USER }} var ${{ vars.name }}"
