@@ -22,14 +22,15 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    environment: develop
+    #environment: develop
     needs: lint
     steps:
     
       - name: se desplegará servicio develop
         id: outputs
         run: |
-           echo "secret ${{ secrets.USER }} var ${{ vars.name }}"
+           #echo "secret ${{ secrets.USER }} var ${{ vars.name }}"
+           echo "test"
       - name: Check out code
         uses: actions/checkout@v2
       - name: Set up Python
