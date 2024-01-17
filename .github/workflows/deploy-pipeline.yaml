@@ -54,7 +54,7 @@ jobs:
 
   publish:
      runs-on: ubuntu-latest
-     environment: laboratory
+     environment: uat
      needs: build
      env:
        Suser: ${{ secrets.USER }}
