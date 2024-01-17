@@ -47,8 +47,15 @@ jobs:
 
   publish:
      runs-on: ubuntu-latest
+     environment: develop
      needs: build
+     env:
+       Suser: ${{ secrets.USER }}
      steps:
+       - name: se desplegará servicio ${{ env.SERVICE }} en ${{ env.PARENT_PARTITION }}
+         id: outputs
+         run: |
+               echo "secret $user"
        - name: Create release
          id: create_release
          uses: actions/create-release@v1
