@@ -55,7 +55,7 @@ jobs:
        - name: se desplegará servicio ${{ env.SERVICE }} en ${{ env.PARENT_PARTITION }}
          id: outputs
          run: |
-               echo "secret $user"
+               echo "secret $user var ${{ vars.name }}"
        - name: Create release
          id: create_release
          uses: actions/create-release@v1
