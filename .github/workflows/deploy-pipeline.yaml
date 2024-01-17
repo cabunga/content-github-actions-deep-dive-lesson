@@ -58,7 +58,7 @@ jobs:
      env:
        Suser: ${{ secrets.USER }}
      steps:
-       - name: se desplegará servicio lab
+       - name: se desplegará servicio laboratory
          id: outputs
          run: |
                echo "secret ${{ secrets.USER }} var ${{ vars.name }}"
